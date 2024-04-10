@@ -26,6 +26,7 @@ void EventLoop::loop(){
 
 void EventLoop::unloop(){
     _isLooping = false;
+    int a = 10;
 }
 
 void EventLoop::waitEpollFd(){
