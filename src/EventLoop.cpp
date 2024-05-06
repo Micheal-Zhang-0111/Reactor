@@ -1,8 +1,10 @@
 #include"EventLoop.h"
 #include<unistd.h>
+#include <sys/eventfd.h>
 
 EventLoop::EventLoop(Acceptor &acceptor)
 :_epfd(createEpollFd()),
+_evtfd(createEventFd()),
 _acceptor(acceptor),
 _isLooping(false),
 _eventList(1024)
@@ -26,6 +28,57 @@ void EventLoop::loop(){
 
 void EventLoop::unloop(){
     _isLooping = false;
+}
+
+void EventLoop::runInLoop(Functor &&cb)
+{
+    //可以使用大括号将某些栈变量/栈对象提前结束
+    {
+        MutexLockGuard autoLock(_mutex);
+        _pengingsCb.push_back(std::move(cb));
+    }
+
+    //....
+    //...
+    wakeup();
+}
+
+void EventLoop::doPengingFunctors()
+{
+    vector<Functor> tmp;
+    {
+        //粒度
+        MutexLockGuard autoLock(_mutex);
+        tmp.swap(_pengingsCb);
+    }
+
+    //vector<Functor> _pengingsCb;
+    for(auto &cb : tmp)
+    {
+        cb();
+    }
+}
+
+void EventLoop::wakeup()
+{
+    uint64_t one = 1;
+    int ret = ::write(_evtfd, &one, sizeof(one));
+    if(ret != sizeof(one))
+    {
+        perror("write");
+        return;
+    }
+}
+
+void EventLoop::handleRead()
+{
+    uint64_t one = 1;
+    int ret = ::read(_evtfd, &one, sizeof(one));
+    if(ret != sizeof(one))
+    {
+        perror("read");
+        return;
+    }
 }
 
 void EventLoop::waitEpollFd(){
@@ -108,6 +161,18 @@ int EventLoop::createEpollFd(){
         perror("epoll_create");
         return -1;
     } 
+    return fd;
+}
+
+int EventLoop::createEventFd()
+{
+    int fd= eventfd(10, 0);
+    if(-1 == fd)
+    {
+        perror("eventfd");
+        return -1;
+    }
+
     return fd;
 }
 

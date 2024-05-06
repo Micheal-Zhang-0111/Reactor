@@ -1,4 +1,5 @@
 #include"TcpConnection.h"
+#include "EventLoop.h"
 #include<iostream>
 #include<sstream>
 
@@ -20,6 +21,15 @@ TcpConnection::~TcpConnection(){
 
 void TcpConnection::send(const string &msg){
     _sockIO.writen(msg.c_str(),msg.size());
+}
+
+void TcpConnection::sendInLoop(const string &msg)
+{
+    if(_loop)
+    {
+        _loop->runInLoop(std::bind(&TcpConnection::send, this, msg));//注册到EventLoop
+        //void runInLoop(function<void()> &&cb);
+    }
 }
 
 string TcpConnection::receive(){

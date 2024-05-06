@@ -7,9 +7,33 @@ CMakeFiles/main.dir/src/Acceptor.cpp.o: ../include/NonCopyable.h
 CMakeFiles/main.dir/src/Acceptor.cpp.o: ../include/Socket.h
 CMakeFiles/main.dir/src/Acceptor.cpp.o: ../src/Acceptor.cpp
 
+CMakeFiles/main.dir/src/Condition.cpp.o: ../include/./NonCopyable.h
+CMakeFiles/main.dir/src/Condition.cpp.o: ../include/Condition.h
+CMakeFiles/main.dir/src/Condition.cpp.o: ../include/MutexLock.h
+CMakeFiles/main.dir/src/Condition.cpp.o: ../src/Condition.cpp
+
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/./NonCopyable.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/Acceptor.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/Condition.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/EchoServer.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/EventLoop.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/InetAddress.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/MutexLock.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/NonCopyable.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/Socket.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/SocketIO.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/TaskQueue.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/TcpConnection.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/TcpServer.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/Thread.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../include/ThreadPool.h
+CMakeFiles/main.dir/src/EchoServer.cpp.o: ../src/EchoServer.cpp
+
+CMakeFiles/main.dir/src/EventLoop.cpp.o: ../include/./NonCopyable.h
 CMakeFiles/main.dir/src/EventLoop.cpp.o: ../include/Acceptor.h
 CMakeFiles/main.dir/src/EventLoop.cpp.o: ../include/EventLoop.h
 CMakeFiles/main.dir/src/EventLoop.cpp.o: ../include/InetAddress.h
+CMakeFiles/main.dir/src/EventLoop.cpp.o: ../include/MutexLock.h
 CMakeFiles/main.dir/src/EventLoop.cpp.o: ../include/NonCopyable.h
 CMakeFiles/main.dir/src/EventLoop.cpp.o: ../include/Socket.h
 CMakeFiles/main.dir/src/EventLoop.cpp.o: ../include/SocketIO.h
@@ -19,6 +43,10 @@ CMakeFiles/main.dir/src/EventLoop.cpp.o: ../src/EventLoop.cpp
 CMakeFiles/main.dir/src/InetAddress.cpp.o: ../include/InetAddress.h
 CMakeFiles/main.dir/src/InetAddress.cpp.o: ../src/InetAddress.cpp
 
+CMakeFiles/main.dir/src/MutexLock.cpp.o: ../include/./NonCopyable.h
+CMakeFiles/main.dir/src/MutexLock.cpp.o: ../include/MutexLock.h
+CMakeFiles/main.dir/src/MutexLock.cpp.o: ../src/MutexLock.cpp
+
 CMakeFiles/main.dir/src/Socket.cpp.o: ../include/NonCopyable.h
 CMakeFiles/main.dir/src/Socket.cpp.o: ../include/Socket.h
 CMakeFiles/main.dir/src/Socket.cpp.o: ../src/Socket.cpp
@@ -26,20 +54,33 @@ CMakeFiles/main.dir/src/Socket.cpp.o: ../src/Socket.cpp
 CMakeFiles/main.dir/src/SocketIO.cpp.o: ../include/SocketIO.h
 CMakeFiles/main.dir/src/SocketIO.cpp.o: ../src/SocketIO.cpp
 
+CMakeFiles/main.dir/src/TaskQueue.cpp.o: ../include/./NonCopyable.h
+CMakeFiles/main.dir/src/TaskQueue.cpp.o: ../include/Condition.h
+CMakeFiles/main.dir/src/TaskQueue.cpp.o: ../include/MutexLock.h
+CMakeFiles/main.dir/src/TaskQueue.cpp.o: ../include/TaskQueue.h
+CMakeFiles/main.dir/src/TaskQueue.cpp.o: ../src/TaskQueue.cpp
+
+CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../include/./NonCopyable.h
+CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../include/Acceptor.h
+CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../include/EventLoop.h
 CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../include/InetAddress.h
+CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../include/MutexLock.h
 CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../include/NonCopyable.h
 CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../include/Socket.h
 CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../include/SocketIO.h
 CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../include/TcpConnection.h
 CMakeFiles/main.dir/src/TcpConnection.cpp.o: ../src/TcpConnection.cpp
 
-CMakeFiles/main.dir/src/main.cpp.o: ../include/Acceptor.h
-CMakeFiles/main.dir/src/main.cpp.o: ../include/EventLoop.h
-CMakeFiles/main.dir/src/main.cpp.o: ../include/InetAddress.h
-CMakeFiles/main.dir/src/main.cpp.o: ../include/NonCopyable.h
-CMakeFiles/main.dir/src/main.cpp.o: ../include/Socket.h
-CMakeFiles/main.dir/src/main.cpp.o: ../include/SocketIO.h
-CMakeFiles/main.dir/src/main.cpp.o: ../include/TcpConnection.h
-CMakeFiles/main.dir/src/main.cpp.o: ../include/TcpServer.h
+CMakeFiles/main.dir/src/Thread.cpp.o: ../include/Thread.h
+CMakeFiles/main.dir/src/Thread.cpp.o: ../src/Thread.cpp
+
+CMakeFiles/main.dir/src/ThreadPool.cpp.o: ../include/./NonCopyable.h
+CMakeFiles/main.dir/src/ThreadPool.cpp.o: ../include/Condition.h
+CMakeFiles/main.dir/src/ThreadPool.cpp.o: ../include/MutexLock.h
+CMakeFiles/main.dir/src/ThreadPool.cpp.o: ../include/TaskQueue.h
+CMakeFiles/main.dir/src/ThreadPool.cpp.o: ../include/Thread.h
+CMakeFiles/main.dir/src/ThreadPool.cpp.o: ../include/ThreadPool.h
+CMakeFiles/main.dir/src/ThreadPool.cpp.o: ../src/ThreadPool.cpp
+
 CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp
 

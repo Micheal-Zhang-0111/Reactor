@@ -8,6 +8,8 @@
 using std::shared_ptr;
 using std::function;
 
+class EventLoop;
+
 class TcpConnection
 :public std::enable_shared_from_this<TcpConnection>
 {
@@ -17,6 +19,7 @@ public:
     TcpConnection(int fd);
     ~TcpConnection();
     void send(const string &msg);
+    void sendInLoop(const string &msg);
     string receive();
     string toString();
 
@@ -36,6 +39,7 @@ private:
     InetAddress getLocalAddr();
     InetAddress getPeerAddr();
 private:
+    EventLoop *_loop;
     Socket _sock;
     SocketIO _sockIO;
     InetAddress _localAddr;

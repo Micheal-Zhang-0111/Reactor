@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(oo_ThreadPool)
+project(EchoServer)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
@@ -9,9 +9,9 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 
 # add_executable(main_exe main.cpp src/Gun.cpp src/Soldier.cpp)
 file(GLOB SOURCES "src/*.cpp")
-add_executable(main ${SOURCES})
+add_executable(EchoServer ${SOURCES})
 
 # 链接 pthread 库
-target_link_libraries(main 
+target_link_libraries(EchoServer 
     pthread
 )
